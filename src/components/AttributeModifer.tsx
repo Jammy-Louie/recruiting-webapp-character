@@ -1,5 +1,6 @@
-import {ATTRIBUTE_LIST} from "../consts";
+import {ATTRIBUTE_LIST, MAX_ATTRIBUTE_POINTS} from "../consts";
 import {Attribute, CharacterAttributeConfig} from "../types";
+import {useMemo} from "react";
 
 type AttributeModifierProps = {
     characterAttributeConfig: CharacterAttributeConfig,
@@ -7,6 +8,12 @@ type AttributeModifierProps = {
 }
 
 const AttributeModifier = (props: AttributeModifierProps) => {
+    const totalAttributePointsAssigned = useMemo(()=>{
+        return Object.entries(props.characterAttributeConfig).reduce((totalAttributePoints, [_key, attributeValue]) =>{
+            return totalAttributePoints + attributeValue.value
+        }, 0)
+    }, [props.characterAttributeConfig])
+
     const decreaseAttribute = (attribute: Attribute) => {
         const value: number = props.characterAttributeConfig[attribute].value;
         props.updateAttribute(attribute, Math.max(0, value - 1));
@@ -14,7 +21,11 @@ const AttributeModifier = (props: AttributeModifierProps) => {
 
     const increaseAttribute = (attribute: Attribute) => {
         const value: number = props.characterAttributeConfig[attribute].value;
-        props.updateAttribute(attribute, Math.max(0, value + 1));
+        if (totalAttributePointsAssigned < MAX_ATTRIBUTE_POINTS) {
+            props.updateAttribute(attribute, Math.max(0, value + 1));
+        } else {
+            alert(`You've reached the maximum attributes points allowed' ${MAX_ATTRIBUTE_POINTS}`)
+        }
     }
 
     return (
