@@ -1,6 +1,7 @@
 import { useReducer } from 'react';
 
 import AttributeModifier from "./components/AttributeModifer";
+import CharacterClass from "./components/CharacterClass";
 import characterReducer from './reducers/characterReducer';
 import {INITIAL_CHARACTER_STATE} from "./consts";
 import {Attribute} from "./types";
@@ -29,6 +30,7 @@ function App() {
                     characterAttributeConfig={character.attributes}
                     updateAttribute={(attribute, value) => updateAttribute(attribute, value)}
                 />
+                <CharacterClass characterAttributeConfig={character.attributes}/>
             </section>
         </div>
     );
