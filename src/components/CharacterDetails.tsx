@@ -1,10 +1,12 @@
-import {Attribute, Character} from "../types";
+import {Attribute, Character, SkillName} from "../types";
 import AttributeModifier from "./AttributeModifer";
 import CharacterClass from "./CharacterClass";
+import CharacterSkills from "./CharacterSkills";
 
 type CharacterDetailsProps = {
     character: Character,
     updateAttribute: (attribute: Attribute, value: number) => void
+    updateSkill: (skillName: SkillName, value: number) => void
 }
 
 export const CharacterDetails = (props: CharacterDetailsProps) => {
@@ -20,6 +22,13 @@ export const CharacterDetails = (props: CharacterDetailsProps) => {
                     </div>
                     <div className="character-flex-cotainer-item">
                         <CharacterClass characterAttributeConfig={props.character.attributes}/>
+                    </div>
+                    <div className="character-flex-cotainer-item">
+                        <CharacterSkills
+                            characterAttributeConfig={props.character.attributes}
+                            characterSkills={props.character.skills}
+                            updateSkill={(skillName, value) => props.updateSkill(skillName, value)}
+                        />
                     </div>
                 </div>
             </section>

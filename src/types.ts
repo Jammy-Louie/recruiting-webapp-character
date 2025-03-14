@@ -44,5 +44,6 @@ export type CharacterAttribute = {
 export type CharacterAttributeConfig = Record<Attribute, CharacterAttribute>
 
 export type Character = {
+    skills: Record<SkillName, number>;
     attributes: CharacterAttributeConfig;
 };

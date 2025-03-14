@@ -2,8 +2,9 @@ import { useReducer } from 'react';
 
 import CharacterDetails from "./components/CharacterDetails";
 import characterReducer from './reducers/characterReducer';
-import {Attribute} from "./types";
 import {generateNewCharacter} from "./util/characterUtils";
+
+import {Attribute, SkillName} from "./types";
 
 import './App.css';
 
@@ -18,6 +19,13 @@ function App() {
         dispatch({ type: "UPDATE_ATTRIBUTE", attribute, attributeValue});
     }
 
+    const updateSkill = (
+        skillName: SkillName,
+        skillValue: number
+    ): void => {
+        dispatch({ type: "UPDATE_SKILL", skillName, skillValue});
+    }
+
     return (
         <div className="App">
             <header className="App-header">
@@ -27,6 +35,7 @@ function App() {
                 <CharacterDetails
                     character={character}
                     updateAttribute={updateAttribute}
+                    updateSkill={updateSkill}
                 />
             </section>
         </div>
