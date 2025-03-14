@@ -13,6 +13,7 @@ export const CharacterDetails = (props: CharacterDetailsProps) => {
     return (
         <>
             <section className="App-section">
+                <div>{`Character:${props.character.id}`}</div>
                 <div className="character-flex-cotainer">
                     <div className="character-flex-cotainer-item">
                         <AttributeModifier

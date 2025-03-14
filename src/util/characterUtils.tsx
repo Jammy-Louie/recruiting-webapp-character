@@ -11,8 +11,9 @@ const generateDefaultCharacterAttribute = (value: number): CharacterAttribute =>
     }
 }
 
-export const generateNewCharacter = ():Character => {
+export const generateNewCharacter = (characterId: number):Character => {
     return {
+        id: characterId.toString(),
         skills: {
             'Acrobatics': 0,
             'Animal Handling': 0,
