@@ -1,4 +1,4 @@
-import {Attribute, Class, ClassAttributes, Skill} from "./types";
+import {Attribute, Character, Class, ClassAttributes, Skill} from "./types";
 
 export const ATTRIBUTE_LIST: Array<Attribute> = [
     'Strength',
@@ -57,3 +57,14 @@ export const SKILL_LIST: Array<Skill> = [
     { name: 'Survival', attributeModifier: 'Wisdom' },
 
 ]
+
+export const INITIAL_CHARACTER_STATE: Character ={
+    attributes: {
+        Strength: {value: 0},
+        Dexterity: {value: 0},
+        Constitution: {value: 0},
+        Intelligence: {value: 0},
+        Wisdom: {value: 0},
+        Charisma: {value: 0},
+    }
+}

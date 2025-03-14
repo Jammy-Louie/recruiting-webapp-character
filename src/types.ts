@@ -35,3 +35,13 @@ export type Skill = {
     name: SkillName;
     attributeModifier: Attribute;
 }
+
+type CharacterAttribute = {
+    value: number;
+}
+
+export type CharacterAttributeConfig = Record<Attribute, CharacterAttribute>
+
+export type Character = {
+    attributes: CharacterAttributeConfig;
+};
