@@ -36,8 +36,9 @@ export type Skill = {
     attributeModifier: Attribute;
 }
 
-type CharacterAttribute = {
+export type CharacterAttribute = {
     value: number;
+    modifier: number;
 }
 
 export type CharacterAttributeConfig = Record<Attribute, CharacterAttribute>

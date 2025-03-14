@@ -2,15 +2,14 @@ import { useReducer } from 'react';
 
 import CharacterDetails from "./components/CharacterDetails";
 import characterReducer from './reducers/characterReducer';
-import {INITIAL_CHARACTER_STATE} from "./consts";
 import {Attribute} from "./types";
+import {generateNewCharacter} from "./util/characterUtils";
 
 import './App.css';
 
 
-
 function App() {
-    const [character, dispatch] = useReducer(characterReducer, INITIAL_CHARACTER_STATE);
+    const [character, dispatch] = useReducer(characterReducer, generateNewCharacter());
 
     const updateAttribute = (
         attribute: Attribute,

@@ -22,11 +22,14 @@ const AttributeModifier = (props: AttributeModifierProps) => {
             <section className="App-section">
                 {
                     ATTRIBUTE_LIST.map( (attribute: Attribute, index: number) => {
+
                         return (
                             <div key={index}>
-                                {attribute}:
+                                <span>
+                                {`${attribute} : ${props.characterAttributeConfig[attribute].value}`}
+                                {`(${props.characterAttributeConfig[attribute].modifier})`}
+                                </span>
                                 <button onClick={_ => decreaseAttribute(attribute)}>-</button>
-                                <span>{props.characterAttributeConfig[attribute].value}</span>
                                 <button onClick={_ => increaseAttribute(attribute)}>+</button>
                             </div>
                         )
