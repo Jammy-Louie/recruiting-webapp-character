@@ -56,3 +56,6 @@ export const SKILL_LIST: Array<Skill> = [
     { name: 'Stealth', attributeModifier: 'Dexterity' },
     { name: 'Survival', attributeModifier: 'Wisdom' },
 ]
+
+export const CHARACTER_SAVE_API = "https://recruiting.verylongdomaintotestwith.ca/api/{Jammy-Louie}/character"
+export const CHARACTER_FETCH_API = "https://recruiting.verylongdomaintotestwith.ca/api/{Jammy-Louie}/character"
