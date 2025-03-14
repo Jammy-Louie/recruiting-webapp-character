@@ -45,6 +45,17 @@
   }
 }
 
+.character-flex-cotainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.character-flex-cotainer-item{
+  width: 33%;
+}
+
 .meet-class-req{
   color: red;
 }

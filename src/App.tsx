@@ -1,7 +1,6 @@
 import { useReducer } from 'react';
 
-import AttributeModifier from "./components/AttributeModifer";
-import CharacterClass from "./components/CharacterClass";
+import CharacterDetails from "./components/CharacterDetails";
 import characterReducer from './reducers/characterReducer';
 import {INITIAL_CHARACTER_STATE} from "./consts";
 import {Attribute} from "./types";
@@ -26,11 +25,10 @@ function App() {
                 <h1>React Coding Exercise</h1>
             </header>
             <section className="App-section">
-                <AttributeModifier
-                    characterAttributeConfig={character.attributes}
-                    updateAttribute={(attribute, value) => updateAttribute(attribute, value)}
+                <CharacterDetails
+                    character={character}
+                    updateAttribute={updateAttribute}
                 />
-                <CharacterClass characterAttributeConfig={character.attributes}/>
             </section>
         </div>
     );
