@@ -1,4 +1,6 @@
-export type Attributes = {
+export type Attribute = "Strength" | "Dexterity" | "Constitution" | "Intelligence" | "Wisdom" | "Charisma"
+
+export type ClassAttributes = {
     Strength: number;
     Dexterity: number;
     Constitution: number;
@@ -8,3 +10,28 @@ export type Attributes = {
 };
 
 export type Class = "Barbarian" | "Wizard" | "Bard";
+
+export type SkillName =
+    | 'Acrobatics'
+    | 'Animal Handling'
+    | 'Arcana'
+    | 'Athletics'
+    | 'Deception'
+    | 'History'
+    | 'Insight'
+    | 'Intimidation'
+    | 'Investigation'
+    | 'Medicine'
+    | 'Nature'
+    | 'Perception'
+    | 'Performance'
+    | 'Persuasion'
+    | 'Religion'
+    | 'Sleight of Hand'
+    | 'Stealth'
+    | 'Survival';
+
+export type Skill = {
+    name: SkillName;
+    attributeModifier: Attribute;
+}
